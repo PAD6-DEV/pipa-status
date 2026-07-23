@@ -8,14 +8,13 @@
       name="description"
       content="Community Linux and mobile OS ports for the Xiaomi Pad 6 (pipa)."
     />
-    <base href="/pipa-status/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="atmosphere" aria-hidden="true"></div>
@@ -23,10 +22,7 @@
     <header class="hero">
       <p class="device" id="device-label">Xiaomi Pad 6 (pipa)</p>
       <h1 id="site-title">Pipa</h1>
-      <p class="tagline" id="site-tagline">
-        Community Linux and mobile OS work for pipa — kernels, packages, and
-        flashable images.
-      </p>
+      <p class="tagline" id="site-tagline">Community Linux and mobile OS work for pipa — kernels, packages, and flashable images.</p>
       <nav class="hero-links" aria-label="Foundations">
         <a href="https://github.com/aymanrgab/linux-android-xiaomi-pipa">Kernel</a>
         <a href="https://github.com/thespider2/pipa-pkgs">Packages</a>
@@ -38,13 +34,13 @@
       <section id="ports" class="section" aria-labelledby="ports-heading">
         <h2 id="ports-heading">Ports</h2>
         <p class="section-lead">Operating systems running on pipa.</p>
-        <div id="ports-grid" class="grid"></div>
+        <div id="ports-grid" class="grid"><article class="card" style="animation-delay:0s"><div class="card-top"><h3>Droidian</h3><span class="status">active</span></div><p>Debian-based mobile UI (Phosh) on Halium. Device adaptation for USB gadget, audio deep_buffer, sensors, and pipa quirks.</p><ul class="tags"><li>Halium</li><li>Phosh</li><li>Debian</li></ul><div class="card-links"><a href="https://github.com/aymanrgab/adaptation-droidian-pipa" target="_blank" rel="noopener noreferrer">Adaptation</a><a href="https://github.com/thespider2/droidian-images-xiaomi-pipa" target="_blank" rel="noopener noreferrer">Images</a><a href="https://github.com/thespider2/droidian-pipa-repo" target="_blank" rel="noopener noreferrer">Apt repo</a><a href="https://github.com/thespider2/droidian-installer" target="_blank" rel="noopener noreferrer">Installer</a></div></article><article class="card" style="animation-delay:0.04s"><div class="card-top"><h3>EndeavourOS</h3><span class="status">active</span></div><p>Arch-based desktop images (Plasma / GNOME) with Mu-Silicium boot and packages from pipa-pkgs. CircleCI ARM builds.</p><ul class="tags"><li>Arch</li><li>Plasma</li><li>GNOME</li><li>UEFI</li></ul><div class="card-links"><a href="https://github.com/aymanrgab/endeavouros-pipa" target="_blank" rel="noopener noreferrer">Builder</a><a href="https://github.com/thespider2/pipa-pkgs" target="_blank" rel="noopener noreferrer">Packages</a></div></article><article class="card" style="animation-delay:0.08s"><div class="card-top"><h3>Ultramarine</h3><span class="status">active</span></div><p>Fedora-based Ultramarine port via Katsu. Freedreno display, ath11k Wi‑Fi, ALSA speakers, libcamera — GNOME or Plasma images.</p><ul class="tags"><li>Fedora</li><li>Katsu</li><li>Freedreno</li></ul><div class="card-links"><a href="https://github.com/aymanrgab/ultramarine-pipa" target="_blank" rel="noopener noreferrer">Repository</a><a href="https://github.com/thespider2/pipa-pkgs" target="_blank" rel="noopener noreferrer">DNF packages</a></div></article><article class="card" style="animation-delay:0.12s"><div class="card-top"><h3>Ubuntu Desktop</h3><span class="status">active</span></div><p>Ubuntu 26.04 (Resolute) GNOME or Plasma rootfs via mmdebstrap. Same Mu-Silicium / ESP / boot / rootfs flash map as Ultramarine.</p><ul class="tags"><li>Ubuntu</li><li>GNOME</li><li>Plasma</li></ul><div class="card-links"><a href="https://github.com/PAD6-DEV/Ubuntu-pipa" target="_blank" rel="noopener noreferrer">Repository</a><a href="https://github.com/thespider2/pipa-pkgs" target="_blank" rel="noopener noreferrer">Apt packages</a></div></article><article class="card" style="animation-delay:0.16s"><div class="card-top"><h3>Ubuntu Touch</h3><span class="status">active</span></div><p>Halium 13 port: boot, display, touch, Wi‑Fi, BT, audio, camera, OpenStore, torch, battery, and sensors working on UT 26.04.</p><ul class="tags"><li>Halium 13</li><li>Lomiri</li><li>UT 26.04</li></ul><ul class="features"><li>Boot</li><li>Display</li><li>Touch</li><li>WiFi</li><li>Bluetooth</li><li>Audio</li><li>Camera</li><li>OpenStore</li><li>Torch</li><li>Battery</li><li>Sensors</li></ul><div class="card-links"><a href="https://github.com/thespider2/ubuntu-touch-xiaomi-pipa" target="_blank" rel="noopener noreferrer">Repository</a></div></article><article class="card" style="animation-delay:0.2s"><div class="card-top"><h3>Nemo / openSUSE</h3><span class="status">active</span></div><p>Nemomobile on openSUSE Tumbleweed with Glacier, mapped to the pipa UEFI flash layout. Device RPM from nemo-pipa-packaging.</p><ul class="tags"><li>openSUSE</li><li>Glacier</li><li>UEFI</li></ul><div class="card-links"><a href="https://github.com/thespider2/manjaro-nemo-pipa" target="_blank" rel="noopener noreferrer">Images / flash</a><a href="https://github.com/thespider2/nemo-pipa-packaging" target="_blank" rel="noopener noreferrer">Device packaging</a></div></article><article class="card" style="animation-delay:0.24s"><div class="card-top"><h3>Sailfish OS</h3><span class="status">active</span></div><p>Native mainline port (mesa freedreno + eglfs), not hybris. Qualcomm U-Boot into GPT linux rootfs; CI builds flash sets.</p><ul class="tags"><li>Sailfish</li><li>Mainline</li><li>U-Boot</li></ul><div class="card-links"><a href="https://github.com/PAD6-DEV/sailfish-pipa" target="_blank" rel="noopener noreferrer">Repository</a></div></article></div>
       </section>
 
       <section id="shared" class="section" aria-labelledby="shared-heading">
         <h2 id="shared-heading">Shared infrastructure</h2>
         <p class="section-lead">Kernel, packages, and image plumbing used across ports.</p>
-        <div id="shared-grid" class="grid grid-shared"></div>
+        <div id="shared-grid" class="grid grid-shared"><article class="card" style="animation-delay:0s"><div class="card-top"><h3>Kernel</h3><span class="status">active</span></div><p>Android/Linux kernel tree for pipa used across Droidian, Ubuntu Touch, and related Halium work.</p><ul class="tags"><li>4.19 / mainline work</li></ul><div class="card-links"><a href="https://github.com/aymanrgab/linux-android-xiaomi-pipa" target="_blank" rel="noopener noreferrer">linux-android-xiaomi-pipa</a></div></article><article class="card" style="animation-delay:0.04s"><div class="card-top"><h3>pipa-pkgs</h3><span class="status">active</span></div><p>Multi-distro package repo on GitHub Pages: pacman (Arch/EndeavourOS), DNF (Ultramarine), and apt (Ubuntu).</p><ul class="tags"><li>pacman</li><li>dnf</li><li>apt</li><li>OTA</li></ul><div class="card-links"><a href="https://github.com/thespider2/pipa-pkgs" target="_blank" rel="noopener noreferrer">Source</a><a href="https://thespider2.github.io/pipa-pkgs/" target="_blank" rel="noopener noreferrer">Packages site</a></div></article><article class="card" style="animation-delay:0.08s"><div class="card-top"><h3>Droidian images</h3><span class="status">active</span></div><p>Fastboot and recovery flashable Droidian images for pipa (current and next channels).</p><ul class="tags"><li>fastboot</li><li>recovery</li></ul><div class="card-links"><a href="https://github.com/thespider2/droidian-images-xiaomi-pipa" target="_blank" rel="noopener noreferrer">Repository</a><a href="https://github.com/thespider2/droidian-images-xiaomi-pipa/releases/tag/next" target="_blank" rel="noopener noreferrer">Releases (next)</a></div></article><article class="card" style="animation-delay:0.12s"><div class="card-top"><h3>Droidian apt repo</h3><span class="status">active</span></div><p>Device-specific Debian packages published for the pipa Droidian adaptation.</p><ul class="tags"><li>apt</li></ul><div class="card-links"><a href="https://github.com/thespider2/droidian-pipa-repo" target="_blank" rel="noopener noreferrer">Repository</a></div></article><article class="card" style="animation-delay:0.16s"><div class="card-top"><h3>Droidian Installer</h3><span class="status">active</span></div><p>Desktop installer fork that merges the official Droidian configs with the pipa community overlay for one-click flashing.</p><ul class="tags"><li>AppImage</li><li>fastboot</li><li>installer</li></ul><div class="card-links"><a href="https://github.com/thespider2/droidian-installer" target="_blank" rel="noopener noreferrer">Repository</a><a href="https://github.com/thespider2/droidian-installer/releases" target="_blank" rel="noopener noreferrer">Releases</a></div></article></div>
       </section>
     </main>
 
@@ -59,8 +55,5 @@
         <a href="https://github.com/PAD6-DEV/pipa-status">Source for this site</a>
       </p>
     </footer>
-
-    <script src="data.js"></script>
-    <script src="app.js" defer></script>
   </body>
 </html>

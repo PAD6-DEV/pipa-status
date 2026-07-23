@@ -158,8 +158,9 @@ a:hover {
   border: 1px solid var(--line);
   border-radius: 2px;
   backdrop-filter: blur(8px);
+  opacity: 1;
   transition: border-color 0.2s ease, transform 0.25s ease;
-  animation: rise 0.7s ease-out both;
+  animation: rise 0.7s ease-out;
 }
 
 .card:hover {
@@ -272,11 +273,9 @@ a:hover {
 
 @keyframes rise {
   from {
-    opacity: 0;
     transform: translateY(0.75rem);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
