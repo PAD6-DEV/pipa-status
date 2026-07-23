@@ -1,5 +1,3 @@
-const dataUrl = new URL("./data/projects.json", import.meta.url);
-
 function el(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -9,45 +7,46 @@ function el(tag, className, text) {
 
 function renderCard(project, index) {
   const article = el("article", "card");
-  article.style.animationDelay = `${0.04 * index}s`;
+  article.style.animationDelay = 0.04 * index + "s";
 
   const top = el("div", "card-top");
-  top.append(el("h3", null, project.name));
+  top.appendChild(el("h3", null, project.name));
   if (project.status) {
-    top.append(el("span", "status", project.status));
+    top.appendChild(el("span", "status", project.status));
   }
-  article.append(top);
+  article.appendChild(top);
 
   if (project.blurb) {
-    article.append(el("p", null, project.blurb));
+    article.appendChild(el("p", null, project.blurb));
   }
 
-  if (project.tags?.length) {
+  if (project.tags && project.tags.length) {
     const tags = el("ul", "tags");
-    for (const t of project.tags) {
-      tags.append(el("li", null, t));
+    for (var i = 0; i < project.tags.length; i++) {
+      tags.appendChild(el("li", null, project.tags[i]));
     }
-    article.append(tags);
+    article.appendChild(tags);
   }
 
-  if (project.features?.length) {
+  if (project.features && project.features.length) {
     const feats = el("ul", "features");
-    for (const f of project.features) {
-      feats.append(el("li", null, f));
+    for (var j = 0; j < project.features.length; j++) {
+      feats.appendChild(el("li", null, project.features[j]));
     }
-    article.append(feats);
+    article.appendChild(feats);
   }
 
-  if (project.links?.length) {
+  if (project.links && project.links.length) {
     const links = el("div", "card-links");
-    for (const link of project.links) {
+    for (var k = 0; k < project.links.length; k++) {
+      const link = project.links[k];
       const a = el("a", null, link.label);
       a.href = link.url;
       a.target = "_blank";
       a.rel = "noopener noreferrer";
-      links.append(a);
+      links.appendChild(a);
     }
-    article.append(links);
+    article.appendChild(links);
   }
 
   return article;
@@ -55,35 +54,45 @@ function renderCard(project, index) {
 
 function fillGrid(id, items) {
   const root = document.getElementById(id);
-  if (!root) return;
-  root.replaceChildren(...items.map((item, i) => renderCard(item, i)));
-}
-
-async function main() {
-  try {
-    const res = await fetch(dataUrl);
-    if (!res.ok) throw new Error(`Failed to load projects (${res.status})`);
-    const data = await res.json();
-
-    const title = data.site?.title ?? "Pipa";
-    document.title = `${title} — Xiaomi Pad 6 ports`;
-    const h1 = document.getElementById("site-title");
-    if (h1) h1.textContent = title;
-
-    const tagline = document.getElementById("site-tagline");
-    if (tagline) tagline.textContent = data.site?.tagline ?? "";
-
-    const device = document.getElementById("device-label");
-    if (device && data.site?.device) device.textContent = data.site.device;
-
-    fillGrid("ports-grid", data.ports ?? []);
-    fillGrid("shared-grid", data.shared ?? []);
-  } catch (err) {
-    const mainEl = document.querySelector("main");
-    if (mainEl) {
-      mainEl.replaceChildren(el("p", "error", String(err.message || err)));
-    }
+  if (!root || !items) return;
+  root.textContent = "";
+  for (var i = 0; i < items.length; i++) {
+    root.appendChild(renderCard(items[i], i));
   }
 }
 
-main();
+function main() {
+  const data = window.PIPA_PROJECTS;
+  if (!data) {
+    const mainEl = document.querySelector("main");
+    if (mainEl) {
+      mainEl.appendChild(el("p", "error", "Project data failed to load."));
+    }
+    return;
+  }
+
+  const title = (data.site && data.site.title) || "Pipa";
+  document.title = title + " — Xiaomi Pad 6 ports";
+
+  const h1 = document.getElementById("site-title");
+  if (h1) h1.textContent = title;
+
+  const tagline = document.getElementById("site-tagline");
+  if (tagline && data.site && data.site.tagline) {
+    tagline.textContent = data.site.tagline;
+  }
+
+  const device = document.getElementById("device-label");
+  if (device && data.site && data.site.device) {
+    device.textContent = data.site.device;
+  }
+
+  fillGrid("ports-grid", data.ports || []);
+  fillGrid("shared-grid", data.shared || []);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", main);
+} else {
+  main();
+}

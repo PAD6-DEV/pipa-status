@@ -8,6 +8,7 @@
       name="description"
       content="Community Linux and mobile OS ports for the Xiaomi Pad 6 (pipa)."
     />
+    <base href="/pipa-status/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +23,10 @@
     <header class="hero">
       <p class="device" id="device-label">Xiaomi Pad 6 (pipa)</p>
       <h1 id="site-title">Pipa</h1>
-      <p class="tagline" id="site-tagline"></p>
+      <p class="tagline" id="site-tagline">
+        Community Linux and mobile OS work for pipa — kernels, packages, and
+        flashable images.
+      </p>
       <nav class="hero-links" aria-label="Foundations">
         <a href="https://github.com/aymanrgab/linux-android-xiaomi-pipa">Kernel</a>
         <a href="https://github.com/thespider2/pipa-pkgs">Packages</a>
@@ -56,6 +60,7 @@
       </p>
     </footer>
 
-    <script src="app.js" type="module"></script>
+    <script src="data.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
