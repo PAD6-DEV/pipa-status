@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pipa — Xiaomi Pad 6 ports</title>
+    <meta
+      name="description"
+      content="Community Linux and mobile OS ports for the Xiaomi Pad 6 (pipa)."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="hero">
+      <p class="device" id="device-label">Xiaomi Pad 6 (pipa)</p>
+      <h1 id="site-title">Pipa</h1>
+      <p class="tagline" id="site-tagline"></p>
+      <nav class="hero-links" aria-label="Foundations">
+        <a href="https://github.com/aymanrgab/linux-android-xiaomi-pipa">Kernel</a>
+        <a href="https://github.com/thespider2/pipa-pkgs">Packages</a>
+        <a href="#ports">Ports</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="ports" class="section" aria-labelledby="ports-heading">
+        <h2 id="ports-heading">Ports</h2>
+        <p class="section-lead">Operating systems running on pipa.</p>
+        <div id="ports-grid" class="grid"></div>
+      </section>
+
+      <section id="shared" class="section" aria-labelledby="shared-heading">
+        <h2 id="shared-heading">Shared infrastructure</h2>
+        <p class="section-lead">Kernel, packages, and image plumbing used across ports.</p>
+        <div id="shared-grid" class="grid grid-shared"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Maintained across
+        <a href="https://github.com/aymanrgab">aymanrgab</a>,
+        <a href="https://github.com/thespider2">thespider2</a>, and
+        <a href="https://github.com/PAD6-DEV">PAD6-DEV</a>.
+      </p>
+      <p>
+        <a href="https://github.com/aymanrgab/pipa-status">Source for this site</a>
+      </p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
