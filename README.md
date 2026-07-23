@@ -4,6 +4,11 @@ Static GitHub Pages hub for **Xiaomi Pad 6 (pipa)** ports and shared infrastruct
 
 **Live:** https://pad6-dev.github.io/pipa-status/
 
+## Assets
+
+- `assets/icons/{id}.svg` — card icons
+- `assets/covers/{id}.svg` — card cover art (replace with real screenshots anytime; set `image` in JSON)
+
 ## Edit projects
 
 1. Update [`data/projects.json`](data/projects.json)

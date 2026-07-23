@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img">
+  <defs>
+    <linearGradient id="g-droidian-installer" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#203028"/>
+      <stop offset="100%" stop-color="#0c1210"/>
+    </linearGradient>
+    <radialGradient id="r-droidian-installer" cx="70%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#c4a35a" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#c4a35a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g-droidian-installer)"/>
+  <rect width="640" height="360" fill="url(#r-droidian-installer)"/>
+  <rect x="190" y="48" width="260" height="264" rx="18" fill="#0a100e" stroke="#c4a35a" stroke-width="3" opacity=".9"/>
+  <rect x="208" y="68" width="224" height="200" rx="4" fill="#15201c"/>
+  <circle cx="320" cy="286" r="8" fill="#c4a35a" opacity=".7"/>
+  <g transform="translate(272 130) scale(1.5)" fill="none">
+    <rect x="8" y="12" width="48" height="32" rx="3" stroke="#c4a35a" stroke-width="2.5"/>
+  <path d="M20 52h24M32 44v8" stroke="#c4a35a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M24 28l8 8 12-14" stroke="#c4a35a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

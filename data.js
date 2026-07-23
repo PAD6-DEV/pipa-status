@@ -38,7 +38,10 @@ window.PIPA_PROJECTS = {
           "label": "Installer",
           "url": "https://github.com/thespider2/droidian-installer"
         }
-      ]
+      ],
+      "icon": "assets/icons/droidian.svg",
+      "image": "assets/covers/droidian.svg",
+      "href": "https://github.com/aymanrgab/adaptation-droidian-pipa"
     },
     {
       "id": "endeavouros",
@@ -60,7 +63,10 @@ window.PIPA_PROJECTS = {
           "label": "Packages",
           "url": "https://github.com/thespider2/pipa-pkgs"
         }
-      ]
+      ],
+      "icon": "assets/icons/endeavouros.svg",
+      "image": "assets/covers/endeavouros.svg",
+      "href": "https://github.com/aymanrgab/endeavouros-pipa"
     },
     {
       "id": "ultramarine",
@@ -81,7 +87,10 @@ window.PIPA_PROJECTS = {
           "label": "DNF packages",
           "url": "https://github.com/thespider2/pipa-pkgs"
         }
-      ]
+      ],
+      "icon": "assets/icons/ultramarine.svg",
+      "image": "assets/covers/ultramarine.svg",
+      "href": "https://github.com/aymanrgab/ultramarine-pipa"
     },
     {
       "id": "ubuntu-desktop",
@@ -102,7 +111,10 @@ window.PIPA_PROJECTS = {
           "label": "Apt packages",
           "url": "https://github.com/thespider2/pipa-pkgs"
         }
-      ]
+      ],
+      "icon": "assets/icons/ubuntu-desktop.svg",
+      "image": "assets/covers/ubuntu-desktop.svg",
+      "href": "https://github.com/PAD6-DEV/Ubuntu-pipa"
     },
     {
       "id": "ubuntu-touch",
@@ -132,7 +144,10 @@ window.PIPA_PROJECTS = {
           "label": "Repository",
           "url": "https://github.com/thespider2/ubuntu-touch-xiaomi-pipa"
         }
-      ]
+      ],
+      "icon": "assets/icons/ubuntu-touch.svg",
+      "image": "assets/covers/ubuntu-touch.svg",
+      "href": "https://github.com/thespider2/ubuntu-touch-xiaomi-pipa"
     },
     {
       "id": "nemo",
@@ -153,7 +168,10 @@ window.PIPA_PROJECTS = {
           "label": "Device packaging",
           "url": "https://github.com/thespider2/nemo-pipa-packaging"
         }
-      ]
+      ],
+      "icon": "assets/icons/nemo.svg",
+      "image": "assets/covers/nemo.svg",
+      "href": "https://github.com/thespider2/manjaro-nemo-pipa"
     },
     {
       "id": "sailfish",
@@ -170,7 +188,10 @@ window.PIPA_PROJECTS = {
           "label": "Repository",
           "url": "https://github.com/PAD6-DEV/sailfish-pipa"
         }
-      ]
+      ],
+      "icon": "assets/icons/sailfish.svg",
+      "image": "assets/covers/sailfish.svg",
+      "href": "https://github.com/PAD6-DEV/sailfish-pipa"
     }
   ],
   "shared": [
@@ -187,7 +208,10 @@ window.PIPA_PROJECTS = {
           "label": "linux-android-xiaomi-pipa",
           "url": "https://github.com/aymanrgab/linux-android-xiaomi-pipa"
         }
-      ]
+      ],
+      "icon": "assets/icons/kernel.svg",
+      "image": "assets/covers/kernel.svg",
+      "href": "https://github.com/aymanrgab/linux-android-xiaomi-pipa"
     },
     {
       "id": "pipa-pkgs",
@@ -209,7 +233,10 @@ window.PIPA_PROJECTS = {
           "label": "Packages site",
           "url": "https://thespider2.github.io/pipa-pkgs/"
         }
-      ]
+      ],
+      "icon": "assets/icons/pipa-pkgs.svg",
+      "image": "assets/covers/pipa-pkgs.svg",
+      "href": "https://github.com/thespider2/pipa-pkgs"
     },
     {
       "id": "droidian-images",
@@ -229,7 +256,10 @@ window.PIPA_PROJECTS = {
           "label": "Releases (next)",
           "url": "https://github.com/thespider2/droidian-images-xiaomi-pipa/releases/tag/next"
         }
-      ]
+      ],
+      "icon": "assets/icons/droidian-images.svg",
+      "image": "assets/covers/droidian-images.svg",
+      "href": "https://github.com/thespider2/droidian-images-xiaomi-pipa"
     },
     {
       "id": "droidian-repo",
@@ -244,7 +274,10 @@ window.PIPA_PROJECTS = {
           "label": "Repository",
           "url": "https://github.com/thespider2/droidian-pipa-repo"
         }
-      ]
+      ],
+      "icon": "assets/icons/droidian-repo.svg",
+      "image": "assets/covers/droidian-repo.svg",
+      "href": "https://github.com/thespider2/droidian-pipa-repo"
     },
     {
       "id": "droidian-installer",
@@ -265,7 +298,10 @@ window.PIPA_PROJECTS = {
           "label": "Releases",
           "url": "https://github.com/thespider2/droidian-installer/releases"
         }
-      ]
+      ],
+      "icon": "assets/icons/droidian-installer.svg",
+      "image": "assets/covers/droidian-installer.svg",
+      "href": "https://github.com/thespider2/droidian-installer"
     }
   ]
 };

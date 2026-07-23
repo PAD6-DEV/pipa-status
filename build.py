@@ -9,10 +9,23 @@ ROOT = Path(__file__).resolve().parent
 
 def card_html(project, index):
     delay = f"{0.04 * index:.2f}".rstrip("0").rstrip(".") or "0"
+    href = project.get("href") or (project.get("links") or [{}])[0].get("url", "#")
+    icon = project.get("icon") or f"assets/icons/{project['id']}.svg"
+    image = project.get("image") or f"assets/covers/{project['id']}.svg"
+    name = escape(project["name"])
+    pid = escape(project["id"])
+
     parts = [
-        f'<article class="card" style="animation-delay:{delay}s">',
+        f'<article class="card" style="animation-delay:{delay}s" data-id="{pid}">',
+        f'<a class="card-hit" href="{escape(href, quote=True)}" target="_blank" '
+        f'rel="noopener noreferrer" aria-label="Open {name}"></a>',
+        f'<div class="card-media"><img src="{escape(image, quote=True)}" alt="" '
+        f'loading="lazy" width="640" height="360" /></div>',
+        '<div class="card-body">',
         '<div class="card-top">',
-        f'<h3>{escape(project["name"])}</h3>',
+        f'<div class="card-title"><img class="card-icon" src="{escape(icon, quote=True)}" '
+        f'alt="" width="28" height="28" />',
+        f"<h3 id=\"title-{pid}\">{name}</h3></div>",
     ]
     if project.get("status"):
         parts.append(f'<span class="status">{escape(project["status"])}</span>')
@@ -38,7 +51,7 @@ def card_html(project, index):
             for link in project["links"]
         )
         parts.append(f'<div class="card-links">{links}</div>')
-    parts.append("</article>")
+    parts.append("</div></article>")
     return "".join(parts)
 
 
@@ -86,7 +99,7 @@ def main():
     <main>
       <section id="ports" class="section" aria-labelledby="ports-heading">
         <h2 id="ports-heading">Ports</h2>
-        <p class="section-lead">Operating systems running on pipa.</p>
+        <p class="section-lead">Operating systems running on pipa. Click a card to open its main repo.</p>
         <div id="ports-grid" class="grid">{ports}</div>
       </section>
 
