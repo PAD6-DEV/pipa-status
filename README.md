@@ -2,7 +2,7 @@
 
 Static GitHub Pages hub for **Xiaomi Pad 6 (pipa)** ports and shared infrastructure.
 
-**Live:** https://aymanrgab.github.io/pipa-status/
+**Live:** https://pad6-dev.github.io/pipa-status/
 
 ## Edit projects
 
