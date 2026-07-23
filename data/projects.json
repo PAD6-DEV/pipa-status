@@ -25,6 +25,10 @@
         {
           "label": "Apt repo",
           "url": "https://github.com/thespider2/droidian-pipa-repo"
+        },
+        {
+          "label": "Installer",
+          "url": "https://github.com/thespider2/droidian-installer"
         }
       ]
     },
@@ -194,6 +198,23 @@
         {
           "label": "Repository",
           "url": "https://github.com/thespider2/droidian-pipa-repo"
+        }
+      ]
+    },
+    {
+      "id": "droidian-installer",
+      "name": "Droidian Installer",
+      "blurb": "Desktop installer fork that merges the official Droidian configs with the pipa community overlay for one-click flashing.",
+      "status": "active",
+      "tags": ["AppImage", "fastboot", "installer"],
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/thespider2/droidian-installer"
+        },
+        {
+          "label": "Releases",
+          "url": "https://github.com/thespider2/droidian-installer/releases"
         }
       ]
     }
