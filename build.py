@@ -84,43 +84,44 @@ def main():
   </head>
   <body>
     <div class="atmosphere" aria-hidden="true"></div>
+    <div class="page">
+      <header class="hero">
+        <p class="device" id="device-label">{escape(data["site"]["device"])}</p>
+        <h1 id="site-title">{escape(data["site"]["title"])}</h1>
+        <p class="tagline" id="site-tagline">{escape(data["site"]["tagline"])}</p>
+        <nav class="hero-links" aria-label="Foundations">
+          <a href="https://github.com/aymanrgab/linux-android-xiaomi-pipa">Kernel</a>
+          <a href="https://github.com/thespider2/pipa-pkgs">Packages</a>
+          <a href="#ports">Ports</a>
+        </nav>
+      </header>
 
-    <header class="hero">
-      <p class="device" id="device-label">{escape(data["site"]["device"])}</p>
-      <h1 id="site-title">{escape(data["site"]["title"])}</h1>
-      <p class="tagline" id="site-tagline">{escape(data["site"]["tagline"])}</p>
-      <nav class="hero-links" aria-label="Foundations">
-        <a href="https://github.com/aymanrgab/linux-android-xiaomi-pipa">Kernel</a>
-        <a href="https://github.com/thespider2/pipa-pkgs">Packages</a>
-        <a href="#ports">Ports</a>
-      </nav>
-    </header>
+      <main>
+        <section id="ports" class="section" aria-labelledby="ports-heading">
+          <h2 id="ports-heading">Ports</h2>
+          <p class="section-lead">Operating systems running on pipa. Click a card to open its main repo.</p>
+          <div id="ports-grid" class="grid">{ports}</div>
+        </section>
 
-    <main>
-      <section id="ports" class="section" aria-labelledby="ports-heading">
-        <h2 id="ports-heading">Ports</h2>
-        <p class="section-lead">Operating systems running on pipa. Click a card to open its main repo.</p>
-        <div id="ports-grid" class="grid">{ports}</div>
-      </section>
+        <section id="shared" class="section" aria-labelledby="shared-heading">
+          <h2 id="shared-heading">Shared infrastructure</h2>
+          <p class="section-lead">Kernel, packages, and image plumbing used across ports.</p>
+          <div id="shared-grid" class="grid grid-shared">{shared}</div>
+        </section>
+      </main>
 
-      <section id="shared" class="section" aria-labelledby="shared-heading">
-        <h2 id="shared-heading">Shared infrastructure</h2>
-        <p class="section-lead">Kernel, packages, and image plumbing used across ports.</p>
-        <div id="shared-grid" class="grid grid-shared">{shared}</div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>
-        Maintained across
-        <a href="https://github.com/aymanrgab">aymanrgab</a>,
-        <a href="https://github.com/thespider2">thespider2</a>, and
-        <a href="https://github.com/PAD6-DEV">PAD6-DEV</a>.
-      </p>
-      <p>
-        <a href="https://github.com/PAD6-DEV/pipa-status">Source for this site</a>
-      </p>
-    </footer>
+      <footer class="site-footer">
+        <p>
+          Maintained across
+          <a href="https://github.com/aymanrgab">aymanrgab</a>,
+          <a href="https://github.com/thespider2">thespider2</a>, and
+          <a href="https://github.com/PAD6-DEV">PAD6-DEV</a>.
+        </p>
+        <p>
+          <a href="https://github.com/PAD6-DEV/pipa-status">Source for this site</a>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
 """
