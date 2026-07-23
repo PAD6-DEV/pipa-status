@@ -9,8 +9,8 @@
   --card: rgba(18, 28, 24, 0.72);
   --font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
   --font-body: "Source Sans 3", "Segoe UI", sans-serif;
-  --space: clamp(1rem, 3vw, 2rem);
-  --max: 68rem;
+  --space: clamp(0.85rem, 2.5vw, 1.75rem);
+  --max: 72rem;
 }
 
 *,
@@ -21,13 +21,18 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  width: 100%;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
   line-height: 1.55;
   color: var(--ink);
   background: var(--bg-deep);
@@ -62,16 +67,22 @@ a:hover {
   pointer-events: none;
 }
 
+.hero,
+.section,
+.site-footer {
+  width: min(100% - (var(--space) * 2), var(--max));
+  margin-inline: auto;
+  max-width: 100%;
+}
+
 .hero {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: clamp(3.5rem, 12vh, 7rem) var(--space) clamp(2.5rem, 6vh, 4rem);
+  padding: clamp(2rem, 6vh, 4.5rem) 0 clamp(1.75rem, 4vh, 3rem);
   animation: rise 0.9s ease-out both;
 }
 
 .device {
   margin: 0 0 0.75rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -80,17 +91,18 @@ a:hover {
 .hero h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 14vw, 6.5rem);
+  font-size: clamp(2.75rem, 10vw, 5.5rem);
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.03em;
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 .tagline {
-  max-width: 28rem;
-  margin: 1.25rem 0 0;
-  font-size: 1.15rem;
+  max-width: 36rem;
+  margin: 1rem 0 0;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
   color: var(--ink-muted);
   animation: rise 1s ease-out 0.12s both;
 }
@@ -98,8 +110,8 @@ a:hover {
 .hero-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.85rem 1.35rem;
-  margin-top: 1.75rem;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.35rem;
   animation: rise 1s ease-out 0.22s both;
 }
 
@@ -109,43 +121,49 @@ a:hover {
 }
 
 .section {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--space) clamp(3rem, 8vh, 5rem);
+  padding: 0 0 clamp(2.5rem, 6vh, 4.5rem);
 }
 
 .section h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-weight: 500;
 }
 
 .section-lead {
-  margin: 0.4rem 0 1.5rem;
+  margin: 0.4rem 0 1.25rem;
   color: var(--ink-muted);
-  max-width: 36rem;
+  max-width: 40rem;
 }
 
 .grid {
   display: grid;
-  gap: 1.25rem;
-  grid-template-columns: 1fr;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
 }
 
 @media (min-width: 640px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 960px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .grid-shared {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    gap: 1.25rem;
   }
 }
 
@@ -155,6 +173,8 @@ a:hover {
   flex-direction: column;
   gap: 0;
   padding: 0;
+  min-width: 0;
+  width: 100%;
   overflow: hidden;
   background: var(--card);
   border: 1px solid var(--line);
@@ -178,9 +198,10 @@ a:hover {
   position: absolute;
   inset: 0;
   z-index: 1;
-  text-indent: -9999px;
-  overflow: hidden;
+  /* Avoid text-indent: it expands page width past the viewport */
   color: transparent;
+  font-size: 0;
+  overflow: hidden;
 }
 
 .card-media {
@@ -194,6 +215,7 @@ a:hover {
   display: block;
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   transition: transform 0.35s ease;
 }
@@ -201,75 +223,63 @@ a:hover {
 .card-body {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  padding: 1.1rem 1.2rem 1.25rem;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem 1.1rem;
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
 
 .card-top {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: 0.65rem;
+  min-width: 0;
 }
 
 .card-title {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   min-width: 0;
 }
 
 .card-icon {
   flex-shrink: 0;
-  width: 1.55rem;
-  height: 1.55rem;
+  width: 1.45rem;
+  height: 1.45rem;
   color: var(--accent);
 }
 
 .card h3 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .status {
   flex-shrink: 0;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
   background: var(--accent-soft);
-  padding: 0.2rem 0.45rem;
-  margin-top: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  margin-top: 0.15rem;
 }
 
 .card p {
   margin: 0;
   color: var(--ink-muted);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
+  overflow-wrap: break-word;
 }
 
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.tags li {
-  font-size: 0.75rem;
-  color: var(--ink-muted);
-  border: 1px solid var(--line);
-  padding: 0.15rem 0.45rem;
-}
-
-.features {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
@@ -278,14 +288,30 @@ a:hover {
   list-style: none;
 }
 
-.features li {
+.tags li {
   font-size: 0.72rem;
+  color: var(--ink-muted);
+  border: 1px solid var(--line);
+  padding: 0.15rem 0.4rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  font-size: 0.7rem;
   color: #b8d4c4;
 }
 
 .features li::after {
   content: "·";
-  margin-left: 0.35rem;
+  margin-left: 0.3rem;
   color: var(--ink-muted);
 }
 
@@ -296,32 +322,30 @@ a:hover {
 .card-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem 1rem;
+  gap: 0.55rem 0.9rem;
   margin-top: auto;
-  padding-top: 0.35rem;
+  padding-top: 0.25rem;
   position: relative;
   z-index: 3;
 }
 
 .card-links a {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   position: relative;
   z-index: 3;
 }
 
 .site-footer {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--space) 3rem;
+  padding: 1.25rem 0 2.25rem;
   border-top: 1px solid var(--line);
-  padding-top: 1.5rem;
   color: var(--ink-muted);
   font-size: 0.9rem;
 }
 
 .site-footer p {
   margin: 0 0 0.5rem;
+  overflow-wrap: break-word;
 }
 
 .error {
